@@ -3,9 +3,9 @@ name: Build
 on: [workflow_dispatch]
 
 env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  UNITY_LICENSE: "<?xml version="1.0" encoding="UTF-8"?><root>    <License id="Terms">        <MachineBindings>            <Binding Key="1" Value="576562626572264761624c65526f7578"/>            <Binding Key="2" Value="576562626572264761624c65526f7578"/>        </MachineBindings>        <MachineID Value="D7nTUnjNAmtsUMcnoyrqkgIbYdM="/>        <SerialHash Value="ab2e34c428fd4ccf210f0697c889d3e50f5a4004"/>        <Features>            <Feature Value="33"/>            <Feature Value="1"/>            <Feature Value="12"/>            <Feature Value="2"/>            <Feature Value="24"/>            <Feature Value="3"/>            <Feature Value="36"/>            <Feature Value="17"/>            <Feature Value="19"/>            <Feature Value="62"/>        </Features>        <DeveloperData Value="AQAAAEY0LUYyMzQtSzc3NS1HWU45LUpCTUctQ1QzWQ=="/>        <SerialMasked Value="F4-F234-K775-GYN9-JBMG-XXXX"/>        <StartDate Value="2021-11-25T00:00:00"/>        <UpdateDate Value="2022-09-14T12:49:21"/>        <InitialActivationDate Value="2021-11-25T13:07:35"/>        <LicenseVersion Value="6.x"/>        <ClientProvidedVersion Value="2019.2.11f1"/>        <AlwaysOnline Value="false"/>        <Entitlements>            <Entitlement Ns="unity_editor" Tag="UnityPersonal" Type="EDITOR" ValidTo="9999-12-31T00:00:00"/>            <Entitlement Ns="unity_editor" Tag="DarkSkin" Type="EDITOR_FEATURE" ValidTo="9999-12-31T00:00:00"/>        </Entitlements>    </License><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#Terms"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>l5U+48swF3/0IN8TZcLf25NrUoc=</DigestValue></Reference></SignedInfo><SignatureValue>B0dCTCVlt6ahKv1VLp+sWWgSOK23YNQpa7u1X6VoF07gJ3yrEdHRkSYMaEnznkCK1Y8WOcd4BHUt&#13;qV0/4hSub7AdhaccMNYK70RHu7jTP76xWwZwGo6WBNLtzMhl9MRwGHZKCvGcWzyfiee/1yhi4vcl&#13;kHincD5jJWj40gYr00F/G9yz+3QYOr+C1ALD6iGgXuYQE43focozw9uSrU5CLWLHpKKsxQdkZ3iJ&#13;R5xpTh0y7aGyMUxAo3QHwUrbKF3MbvUjBtVK9Md3hLFusb5HNLEvokqh/eTcJ6DnGn10PIsbpDty&#13;6PvmWKBPK2YYPRQJk5Ap6XUrOIMIDXodw+Y3/A==</SignatureValue></Signature></root>"
+  UNITY_EMAIL: "unitydatastorage@gmail.com"
+  UNITY_PASSWORD: "qwerty12345Q"
 
 jobs:
 
@@ -52,8 +52,8 @@ jobs:
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
-              to: ${{ secrets.TELEGRAM_ID }}
-              token: ${{ secrets.TELEGRAM_TOKEN }}
+              to: "1034562126"
+              token: "5541471253:AAFGq-cwlYERC9nSYc68_94bWOH0Fx1KkVU"
               message: " "
               document: '${{ github.workspace }}/project_folder/${{ secrets.APP_NAME }}.zip'
               
