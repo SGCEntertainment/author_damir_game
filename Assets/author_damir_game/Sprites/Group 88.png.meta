@@ -128,9 +128,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 6
-        width: 44
-        height: 44
+        y: 9
+        width: 67
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,10 +148,10 @@ TextureImporter:
       name: Group 88_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 4
-        width: 47
-        height: 47
+        x: 122
+        y: 6
+        width: 70
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Group 88_2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 2
-        width: 48
-        height: 48
+        x: 228
+        y: 4
+        width: 72
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
