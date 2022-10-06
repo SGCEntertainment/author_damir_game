@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
 
     Transform parentRef;
     GameObject exitCanvasRef;
+    GameObject canvasGORef;
+
+    CanvasName lastCanvasNameRef;
+
 
     [Space(10)]
     [SerializeField] GameObject languageCanvas;
@@ -61,14 +65,54 @@ public class UIManager : MonoBehaviour
 
     public void ShowCanvas(CanvasName canvasName)
     {
+        GameObject canvasPrefab = GetCanvasPrefab(canvasName);
+        if(canvasGORef && canvasPrefab != exitCanvas)
+        {
+            Destroy(canvasGORef);
+        }
+
         switch (canvasName)
         {
-            case CanvasName.language: Instantiate(languageCanvas, parentRef); break;
-            case CanvasName.splash: Instantiate(splashCanvas, parentRef); break;
-            case CanvasName.exit: exitCanvasRef = Instantiate(exitCanvas, parentRef); break;
-            case CanvasName.menu: Instantiate(menuCanvas, parentRef); break;
-            case CanvasName.contacts: Instantiate(contactsCanvas, parentRef); break;
-            case CanvasName.progress: Instantiate(progressCanvas, parentRef); break;
+            case CanvasName.language: Instantiate(canvasPrefab, parentRef); break;
+            case CanvasName.splash: Instantiate(canvasPrefab, parentRef); break;
+            case CanvasName.exit: exitCanvasRef = Instantiate(canvasPrefab, parentRef); break;
+
+            case CanvasName.menu: 
+                canvasGORef = Instantiate(canvasPrefab, parentRef);
+                NavigationCanvas.Instance.UpdateNavigation();
+                break;
+
+            case CanvasName.contacts: 
+                canvasGORef = Instantiate(canvasPrefab, parentRef);
+                lastCanvasNameRef = CanvasName.menu;
+                break;
+
+            case CanvasName.progress: 
+                canvasGORef = Instantiate(canvasPrefab, parentRef);
+                lastCanvasNameRef = CanvasName.menu;
+                break;
         }
+    }
+
+    GameObject GetCanvasPrefab(CanvasName canvasName) => canvasName switch
+    {
+        CanvasName.language => languageCanvas,
+        CanvasName.splash => splashCanvas,
+        CanvasName.exit => exitCanvas,
+        CanvasName.menu => menuCanvas,
+        CanvasName.contacts => contactsCanvas,
+        CanvasName.progress => progressCanvas,
+
+        _ => languageCanvas
+    };
+
+    public void Back()
+    {
+        if(canvasGORef)
+        {
+            Destroy(canvasGORef);
+        }
+
+        ShowCanvas(lastCanvasNameRef);
     }
 }
