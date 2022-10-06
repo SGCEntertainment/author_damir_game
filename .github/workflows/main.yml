@@ -59,7 +59,7 @@ jobs:
               
       - uses: geekyeggo/delete-artifact@v1
         with:
-            name: ${{ secrets.APP_NAME }}
+            name: "КЦ"
       
 
   buildAndroidAPK:
