@@ -16,19 +16,26 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    Transform parentRef;
     GameObject exitCanvasRef;
-
-    [SerializeField] Transform parent;
 
     [Space(10)]
     [SerializeField] GameObject languageCanvas;
     [SerializeField] GameObject splashCanvas;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject exitCanvas;
+    [SerializeField] GameObject contactsCanvas;
+    [SerializeField] GameObject progressCanvas;
 
     private void Start()
     {
+        CacheComponents();
         CheckLanguageUI();
+    }
+
+    void CacheComponents()
+    {
+        parentRef = GameObject.Find("Canvases").transform;
     }
 
     private void Update()
@@ -56,10 +63,12 @@ public class UIManager : MonoBehaviour
     {
         switch (canvasName)
         {
-            case CanvasName.language: Instantiate(languageCanvas, parent); break;
-            case CanvasName.splash: Instantiate(splashCanvas, parent); break;
-            case CanvasName.exit: exitCanvasRef = Instantiate(exitCanvas, parent); break;
-            case CanvasName.menu: Instantiate(menuCanvas, parent); ; break;
+            case CanvasName.language: Instantiate(languageCanvas, parentRef); break;
+            case CanvasName.splash: Instantiate(splashCanvas, parentRef); break;
+            case CanvasName.exit: exitCanvasRef = Instantiate(exitCanvas, parentRef); break;
+            case CanvasName.menu: Instantiate(menuCanvas, parentRef); break;
+            case CanvasName.contacts: Instantiate(contactsCanvas, parentRef); break;
+            case CanvasName.progress: Instantiate(progressCanvas, parentRef); break;
         }
     }
 }

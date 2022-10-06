@@ -1,4 +1,4 @@
 public enum CanvasName
 {
-    language, splash, exit, menu
+    language, splash, exit, menu, contacts, progress
 }

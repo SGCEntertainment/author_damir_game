@@ -7,6 +7,7 @@ public class ExitCanvas : MonoBehaviour
         if(!accept)
         {
             Destroy(gameObject);
+            return;
         }
 
         Application.Quit();
