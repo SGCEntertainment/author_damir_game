@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
             case CanvasName.splash: Instantiate(canvasPrefab, parentRef); break;
 
             case CanvasName.exit: choiseCanvasRef = Instantiate(canvasPrefab, parentRef);
-                choiseCanvasRef.GetComponent<ChoiceCanvas>().Init("Вы точно хотите выйти из игры?", () => 
+                choiseCanvasRef.GetComponent<ChoiceCanvas>().Init(UITranslatUtil.GetUIString(5), () => 
                 { 
                     Application.Quit(); 
                 });

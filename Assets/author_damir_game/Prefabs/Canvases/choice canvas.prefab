@@ -262,8 +262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 24.4}
-  m_SizeDelta: {x: 301.072, y: 44.1965}
+  m_AnchoredPosition: {x: -0.0000038147, y: 29.667883}
+  m_SizeDelta: {x: 301.072, y: 54.7323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4763584997768867371
 CanvasRenderer:
@@ -295,10 +295,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 45be1924014da5f4197d78231375e25a, type: 3}
-    m_FontSize: 21
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 7470601965147860015}
   - component: {fileID: 3795220849984176585}
   - component: {fileID: 5700936346567843583}
+  - component: {fileID: 5530625670918759730}
   m_Layer: 0
   m_Name: text
   m_TagString: Untagged
@@ -387,6 +388,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041D\u0435\u0442"
+--- !u!114 &5530625670918759730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389862025778248809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1577691c295b9fb48be29fc11b907931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 7
 --- !u!1 &6693976079590160507
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +662,7 @@ GameObject:
   - component: {fileID: 6770110215292275725}
   - component: {fileID: 6441083206760103946}
   - component: {fileID: 2610626100304618293}
+  - component: {fileID: 3504153834056198289}
   m_Layer: 0
   m_Name: text
   m_TagString: Untagged
@@ -716,6 +731,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0414\u0430"
+--- !u!114 &3504153834056198289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514019616970719784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1577691c295b9fb48be29fc11b907931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6
 --- !u!1 &8148352004096394639
 GameObject:
   m_ObjectHideFlags: 0
