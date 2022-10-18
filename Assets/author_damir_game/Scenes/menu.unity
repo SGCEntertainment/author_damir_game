@@ -571,9 +571,9 @@ MonoBehaviour:
   languageCanvas: {fileID: 7941344535126730793, guid: b4869ce47d162474f8b444fb74ee1198, type: 3}
   splashCanvas: {fileID: 4946726759593648264, guid: 79ba3d502b2b9c94988172102c7b45b7, type: 3}
   menuCanvas: {fileID: 2427215358719294362, guid: a08d8753d8925684296898bbb8b78e29, type: 3}
-  exitCanvas: {fileID: 6693976079590160507, guid: 989b9c748b8647849977df697ff799b4, type: 3}
   contactsCanvas: {fileID: 6629427817350793725, guid: 8f221f5cb90a2104f9589a74d4f6f9e6, type: 3}
   progressCanvas: {fileID: 7147850200002980532, guid: 463bbab0b600cc6418e60a16352d6e4d, type: 3}
+  choiceCanvas: {fileID: 6693976079590160507, guid: 01b6a154a8ce6c843b25564fe1ee758b, type: 3}
 --- !u!4 &582775238
 Transform:
   m_ObjectHideFlags: 0

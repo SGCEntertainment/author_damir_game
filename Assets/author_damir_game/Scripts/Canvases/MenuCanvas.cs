@@ -11,12 +11,12 @@ public class MenuCanvas : MonoBehaviour
 
             case 2: 
                 UIManager.Instance.ShowCanvas(CanvasName.progress);;
-                NavigationCanvas.Instance.UpdateNavigation(true, "Достижения", false, true);
+                NavigationCanvas.Instance.UpdateNavigation(true, "progress", false, true);
                 break;
 
             case 3: 
                 UIManager.Instance.ShowCanvas(CanvasName.contacts);
-                NavigationCanvas.Instance.UpdateNavigation(true, "Контакты", false, true);
+                NavigationCanvas.Instance.UpdateNavigation(true, "contacts", false, true);
                 break;
 
             case 4: UIManager.Instance.ShowCanvas(CanvasName.exit); break;

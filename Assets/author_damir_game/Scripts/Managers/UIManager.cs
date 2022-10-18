@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -17,8 +18,9 @@ public class UIManager : MonoBehaviour
     }
 
     Transform parentRef;
-    GameObject exitCanvasRef;
+
     GameObject canvasGORef;
+    GameObject choiseCanvasRef;
 
     CanvasName lastCanvasNameRef;
 
@@ -27,9 +29,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject languageCanvas;
     [SerializeField] GameObject splashCanvas;
     [SerializeField] GameObject menuCanvas;
-    [SerializeField] GameObject exitCanvas;
     [SerializeField] GameObject contactsCanvas;
     [SerializeField] GameObject progressCanvas;
+    [SerializeField] GameObject choiceCanvas;
 
     private void Start()
     {
@@ -44,7 +46,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(!exitCanvasRef && Input.GetKeyDown(KeyCode.Escape))
+        if (!choiseCanvasRef && Input.GetKeyDown(KeyCode.Escape))
         {
             ShowCanvas(CanvasName.exit);
         }
@@ -66,7 +68,7 @@ public class UIManager : MonoBehaviour
     public void ShowCanvas(CanvasName canvasName)
     {
         GameObject canvasPrefab = GetCanvasPrefab(canvasName);
-        if(canvasGORef && canvasPrefab != exitCanvas)
+        if(canvasGORef && canvasPrefab != choiceCanvas)
         {
             Destroy(canvasGORef);
         }
@@ -75,7 +77,13 @@ public class UIManager : MonoBehaviour
         {
             case CanvasName.language: Instantiate(canvasPrefab, parentRef); break;
             case CanvasName.splash: Instantiate(canvasPrefab, parentRef); break;
-            case CanvasName.exit: exitCanvasRef = Instantiate(canvasPrefab, parentRef); break;
+
+            case CanvasName.exit: choiseCanvasRef = Instantiate(canvasPrefab, parentRef);
+                choiseCanvasRef.GetComponent<ChoiceCanvas>().Init("Вы точно хотите выйти из игры?", () => 
+                { 
+                    Application.Quit(); 
+                });
+                break;
 
             case CanvasName.menu: 
                 canvasGORef = Instantiate(canvasPrefab, parentRef);
@@ -98,7 +106,7 @@ public class UIManager : MonoBehaviour
     {
         CanvasName.language => languageCanvas,
         CanvasName.splash => splashCanvas,
-        CanvasName.exit => exitCanvas,
+        CanvasName.exit => choiceCanvas,
         CanvasName.menu => menuCanvas,
         CanvasName.contacts => contactsCanvas,
         CanvasName.progress => progressCanvas,
