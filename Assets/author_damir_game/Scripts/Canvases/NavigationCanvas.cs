@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class NavigationCanvas : MonoBehaviour
     [SerializeField] GameObject statsGO;
 
     [Space(10)]
-    [SerializeField] Text headText;
+    [SerializeField] TextMeshProUGUI headText;
 
     private void Start()
     {

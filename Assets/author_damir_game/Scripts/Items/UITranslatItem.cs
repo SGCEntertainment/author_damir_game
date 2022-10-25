@@ -1,4 +1,4 @@
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class UITranslatItem : MonoBehaviour
@@ -7,6 +7,6 @@ public class UITranslatItem : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Text>().text = UITranslatUtil.GetUIString(id);
+        GetComponent<TextMeshProUGUI>().text = UITranslatUtil.GetUIString(id);
     }
 }

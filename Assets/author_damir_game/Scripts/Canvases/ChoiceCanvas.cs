@@ -1,10 +1,11 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class ChoiceCanvas : MonoBehaviour
 {
-    [SerializeField] Text titleText;
+    [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] Button yesBtn;
     [SerializeField] Button noBtn;
 

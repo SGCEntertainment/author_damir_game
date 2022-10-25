@@ -10,7 +10,7 @@ public static class UITranslatUtil
 
     public static string[] UI_EN =
     {
-        "Continue", "start over", "Achievements", "Contacts", "Exit",
+        "Continue", "Start over", "Achievements", "Contacts", "Exit",
         "Are you sure you want to exit the game?", "Yes", "No"
     };
 
