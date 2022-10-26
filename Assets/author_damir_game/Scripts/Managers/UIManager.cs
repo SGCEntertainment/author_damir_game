@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject contactsCanvas;
     [SerializeField] GameObject progressCanvas;
     [SerializeField] GameObject choiceCanvas;
+    [SerializeField] GameObject completeCanvas;
 
     private void Start()
     {
@@ -65,7 +67,7 @@ public class UIManager : MonoBehaviour
         ShowCanvas(CanvasName.language);
     }
 
-    public void ShowCanvas(CanvasName canvasName)
+    public GameObject ShowCanvas(CanvasName canvasName)
     {
         GameObject canvasPrefab = GetCanvasPrefab(canvasName);
         if(canvasGORef && canvasPrefab != choiceCanvas)
@@ -85,21 +87,51 @@ public class UIManager : MonoBehaviour
                 });
                 break;
 
-            case CanvasName.menu: 
-                canvasGORef = Instantiate(canvasPrefab, parentRef);
+            case CanvasName.menu: canvasGORef = Instantiate(canvasPrefab, parentRef);
                 NavigationCanvas.Instance.UpdateNavigation();
                 break;
 
-            case CanvasName.contacts: 
-                canvasGORef = Instantiate(canvasPrefab, parentRef);
+            case CanvasName.contacts: canvasGORef = Instantiate(canvasPrefab, parentRef);
                 lastCanvasNameRef = CanvasName.menu;
                 break;
 
-            case CanvasName.progress: 
-                canvasGORef = Instantiate(canvasPrefab, parentRef);
+            case CanvasName.progress: canvasGORef = Instantiate(canvasPrefab, parentRef);
                 lastCanvasNameRef = CanvasName.menu;
                 break;
+
+            case CanvasName.complete: canvasGORef = Instantiate(canvasPrefab, parentRef);
+                lastCanvasNameRef = CanvasName.complete;
+                break;
+
+            case CanvasName.newgame: 
+                if (ProgressManager.HasProgress)
+                {
+                    choiseCanvasRef = Instantiate(canvasPrefab, parentRef);
+                    choiseCanvasRef.GetComponent<ChoiceCanvas>().Init(UITranslatUtil.GetUIString(8), () =>
+                    {
+                        Destroy(choiseCanvasRef);
+                        StartNewGame();
+                    });
+                }
+                else
+                {
+                    StartNewGame();
+                }
+                break;
         }
+
+        return canvasGORef;
+    }
+
+    void StartNewGame()
+    {
+        Destroy(canvasGORef);
+        ProgressManager.ResetProgress();
+
+        canvasGORef = ProgressManager.Instance.OpenChapter(0, out string chapterName);
+        NavigationCanvas.Instance.UpdateNavigation(true, chapterName, false, true);
+
+        lastCanvasNameRef = CanvasName.menu;
     }
 
     GameObject GetCanvasPrefab(CanvasName canvasName) => canvasName switch
@@ -110,6 +142,8 @@ public class UIManager : MonoBehaviour
         CanvasName.menu => menuCanvas,
         CanvasName.contacts => contactsCanvas,
         CanvasName.progress => progressCanvas,
+        CanvasName.complete => completeCanvas,
+        CanvasName.newgame => choiceCanvas,
 
         _ => languageCanvas
     };

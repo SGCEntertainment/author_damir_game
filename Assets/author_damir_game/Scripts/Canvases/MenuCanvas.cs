@@ -1,13 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuCanvas : MonoBehaviour
 {
+    private void Start()
+    {
+        transform.Find("buttons").Find("continue").GetComponent<Button>().interactable = ProgressManager.HasProgress;
+    }
+
     public void Open(int i)
     {
         switch(i)
         {
             case 0: break;
-            case 1: break;
+            case 1:
+                UIManager.Instance.ShowCanvas(CanvasName.newgame);
+                break;
 
             case 2: 
                 UIManager.Instance.ShowCanvas(CanvasName.progress);;

@@ -495,6 +495,7 @@ MonoBehaviour:
   contactsCanvas: {fileID: 6629427817350793725, guid: 8f221f5cb90a2104f9589a74d4f6f9e6, type: 3}
   progressCanvas: {fileID: 7147850200002980532, guid: 463bbab0b600cc6418e60a16352d6e4d, type: 3}
   choiceCanvas: {fileID: 6693976079590160507, guid: 01b6a154a8ce6c843b25564fe1ee758b, type: 3}
+  completeCanvas: {fileID: 456413324397451563, guid: da026586e8523724c8d0c25fb4e7c9de, type: 3}
 --- !u!4 &582775238
 Transform:
   m_ObjectHideFlags: 0
@@ -569,6 +570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 582775238}
+  - {fileID: 1853805522}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -744,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &871818557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -787,7 +789,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f9f0bdffbe4f52448c8ffdf327e340e, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7008657952473959032, guid: 2f9f0bdffbe4f52448c8ffdf327e340e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -811,8 +813,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.49
-  m_fontSizeBase: 29.49
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -850,7 +852,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &871818559
@@ -1083,7 +1085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1149150004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1680,6 +1682,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687128086}
   m_CullTransparentMesh: 1
+--- !u!1 &1853805521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853805522}
+  - component: {fileID: 1853805523}
+  m_Layer: 0
+  m_Name: Progress Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853805522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853805521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 827825113}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853805523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853805521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e578ec37d9a895a4f81395a9ae9689f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chapterCanvas:
+  - {fileID: 3217948393349074063, guid: 93a970371b450fb4d83361a6df9920c9, type: 3}
 --- !u!1 &1996217197
 GameObject:
   m_ObjectHideFlags: 0

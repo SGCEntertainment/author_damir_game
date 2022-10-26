@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ProgressCanvas : MonoBehaviour
 {
     [SerializeField] Transform parent;
-    [SerializeField] Sprite[] achievementSprites;
 
     private void Start()
     {
@@ -13,11 +11,11 @@ public class ProgressCanvas : MonoBehaviour
 
     void CheckProgress()
     {
-        Image[] icons = new Image[parent.childCount];
+        GameObject[] icons = new GameObject[parent.childCount];
         for(int i = 0; i < icons.Length; i++)
         {
-            icons[i] = parent.GetChild(i).GetChild(1).GetComponent<Image>();
-            icons[i].gameObject.SetActive(false);
+            icons[i] = parent.GetChild(i).GetChild(1).gameObject;
+            icons[i].SetActive(i <= ProgressManager.LastChapterID);
         }
     }
 }
