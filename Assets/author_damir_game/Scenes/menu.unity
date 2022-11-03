@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chapterCanvas:
-  - {fileID: 6546377732998695953, guid: 139aeef18953723438e1803e40b71493, type: 3}
+  - {fileID: 5067114762256862622, guid: f3cdd1e2af369594c8f7adc90d2baf86, type: 3}
 --- !u!1 &1996217197
 GameObject:
   m_ObjectHideFlags: 0
