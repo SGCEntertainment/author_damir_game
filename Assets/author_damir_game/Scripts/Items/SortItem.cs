@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SortItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
+        int minIndex = 0;
+        int maxIndex = transform.parent.childCount - 1;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Button down = transform.GetChild(1).GetComponent<Button>();
+        Button up = transform.GetChild(2).GetComponent<Button>();
+
+        down.onClick.AddListener(() =>
+        {
+            int targetIndex = transform.GetSiblingIndex() + 1;
+            if(targetIndex > maxIndex)
+            {
+                return;
+            }
+
+            transform.SetSiblingIndex(targetIndex);
+        });
+
+        up.onClick.AddListener(() =>
+        {
+            int targetIndex = transform.GetSiblingIndex() - 1;
+            if(targetIndex < minIndex)
+            {
+                return;
+            }
+
+            transform.SetSiblingIndex(targetIndex);
+        });
     }
 }
