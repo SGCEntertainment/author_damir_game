@@ -48,6 +48,10 @@ public class ChapterCanvas : MonoBehaviour
                 {
                     UIManager.Instance.ShowCanvas(CanvasName.menu);
                 }
+                else
+                {
+                    
+                }
             });
 
             string chapterName = LanguageUtil.IsRussian() ? chapterNameRu : chapterNameEn;
