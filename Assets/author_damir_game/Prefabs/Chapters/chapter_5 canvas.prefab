@@ -2841,7 +2841,7 @@ MonoBehaviour:
     \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044C \u0434\u0435\u043B\u0430\u0442\u044C?\r\n"
   en: 'Court (arrest of wages):
 
-    
+
 
     - If the debt is not paid, you are forced
     to hand over the documents to the court. In this case, bailiffs may seize wages
@@ -7671,13 +7671,13 @@ MonoBehaviour:
     \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0442\u044C?\r\n"
   en: 'Complaint letters (at the registration address):
 
-    
 
-    - I draw your
-    attention to the fact that if the payment is not received, the company reserves
-    the right to send a letter to the place of your registration about the presence
-    of overdue debts, which will provide information about the deadline and the amount,
-    which currently amounts to xxx rubles. Perhaps it is worth contacting your parents
+
+    - I draw your attention
+    to the fact that if the payment is not received, the company reserves the right
+    to send a letter to the place of your registration about the presence of overdue
+    debts, which will provide information about the deadline and the amount, which
+    currently amounts to xxx rubles. Perhaps it is worth contacting your parents
     with a request to re-borrow money from them and pay off the debt? What are you
     going to do?
 
@@ -10275,14 +10275,19 @@ MonoBehaviour:
     \u043D\u0438 \u0443 \u043A\u043E\u0433\u043E \u043D\u0435\u0442\xBB. \u0427\u0442\u043E
     \u0432\u044B \u0432\u0441\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u043E
     \u0441\u0434\u0435\u043B\u0430\u043B\u0438?\r\n"
-  en: "As practice shows, bailiffs do not really understand whose property. They
+  en: 'As practice shows, bailiffs do not really understand whose property. They
     just describe everything. And the owners of the property will need to look for
     receipts and documentation to prove that the property is theirs, and not the
-    Client registered at the registration address.\r\nMoving on. As practice shows,
-    after the selected consequence, objections are received. Let me give you an example:\r\n
-    \"I am ready to pay, but everything in our city is tied to one plant. But if
-    it works, then we all pay. If not, then no one has any money.\" What did you
-    all just do?\r\n"
+    Client registered at the registration address.
+
+    Moving on. As practice shows,
+    after the selected consequence, objections are received. Let me give you an example:
+
+    "I
+    am ready to pay, but everything in our city is tied to one plant. But if it works,
+    then we all pay. If not, then no one has any money." What did you all just do?
+
+'
 --- !u!114 &4238522231657786598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15395,11 +15400,11 @@ MonoBehaviour:
     to you will stop, save your credit history and solve your problem without court
     proceedings. Agree, is it profitable?"
 
-    
 
-    Survey. If the Client tells
-    you: "My parents live at the registration address. They have nothing to do with
-    it." What consequence will be effective in negotiations?
+
+    Survey. If the Client tells you:
+    "My parents live at the registration address. They have nothing to do with it."
+    What consequence will be effective in negotiations?
 
 '
 --- !u!114 &4455254946535834440
@@ -16410,7 +16415,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8011089358235160755}
         m_TargetAssemblyTypeName: ChapterCanvas, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1
