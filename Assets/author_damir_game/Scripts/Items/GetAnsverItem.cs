@@ -16,7 +16,9 @@ public class GetAnsverItem : MonoBehaviour
             {
                 t.gameObject.SetActive(false);
             }
+
             GetComponentInParent<ButtonsHelper>().EnableContinue();
+            GetComponentInParent<ContentSizeHelper>().Rebuild();
         });
     }
 }

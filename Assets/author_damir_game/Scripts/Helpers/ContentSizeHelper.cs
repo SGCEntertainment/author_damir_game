@@ -5,8 +5,10 @@ using UnityEngine;
 public class ContentSizeHelper : MonoBehaviour
 {
     const float fixedOffset = 25.0f;
- 
-    IEnumerator Start()
+
+    private void Start() => StartCoroutine(nameof(RebuildProcess));
+
+    IEnumerator RebuildProcess()
     {
         yield return new WaitForEndOfFrame();
         float parentHeight = transform.parent.GetComponent<RectTransform>().rect.height;
@@ -31,4 +33,6 @@ public class ContentSizeHelper : MonoBehaviour
         }
         canvasGroup.alpha = 1;
     }
+
+    public void Rebuild() => StartCoroutine(nameof(RebuildProcess));
 }
