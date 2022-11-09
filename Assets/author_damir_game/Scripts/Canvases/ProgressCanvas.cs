@@ -15,7 +15,7 @@ public class ProgressCanvas : MonoBehaviour
         for(int i = 0; i < icons.Length; i++)
         {
             icons[i] = parent.GetChild(i).GetChild(1).gameObject;
-            icons[i].SetActive(i <= ProgressManager.LastChapterID);
+            icons[i].SetActive(i <= ProgressManager.LastCompleteID);
         }
     }
 }

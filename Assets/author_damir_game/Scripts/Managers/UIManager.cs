@@ -134,6 +134,16 @@ public class UIManager : MonoBehaviour
         lastCanvasNameRef = CanvasName.menu;
     }
 
+    public void StartWitnContinue(bool fromMenu = false)
+    {
+        Destroy(canvasGORef);
+
+        canvasGORef = ProgressManager.Instance.OpenChapter(fromMenu ? ProgressManager.LastChapterID : ++ProgressManager.LastChapterID, out string chapterName);
+        NavigationCanvas.Instance.UpdateNavigation(true, chapterName, false, true);
+
+        lastCanvasNameRef = CanvasName.menu;
+    }
+
     GameObject GetCanvasPrefab(CanvasName canvasName) => canvasName switch
     {
         CanvasName.language => languageCanvas,

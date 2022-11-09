@@ -44,13 +44,14 @@ public class ChapterCanvas : MonoBehaviour
             string contBtnString = lastChapter ? UITranslatUtil.GetUIString(10) : UITranslatUtil.GetUIString(9);
             completeCanvas.GetComponent<CompleteCanvas>().Init(LanguageUtil.IsRussian() ? winTextRu: winTextEn, contBtnString, achSprite, () =>
             {
+                ProgressManager.LastCompleteID = chapterId;
                 if(chapterId == ProgressManager.Instance.MaxChapters - 1)
                 {
                     UIManager.Instance.ShowCanvas(CanvasName.menu);
                 }
                 else
                 {
-                    
+                    UIManager.Instance.StartWitnContinue();
                 }
             });
 

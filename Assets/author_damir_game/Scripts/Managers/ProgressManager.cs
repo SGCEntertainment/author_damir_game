@@ -18,6 +18,7 @@ public class ProgressManager : MonoBehaviour
     }
 
     const string lastChapterId = "lastChapterId";
+    const string lastCompleteId = "lastCompleteId";
 
     Transform canvasParent;
 
@@ -35,6 +36,12 @@ public class ProgressManager : MonoBehaviour
     {
         get => PlayerPrefs.GetInt(lastChapterId, -1);
         set => PlayerPrefs.SetInt(lastChapterId, value);
+    }
+
+    public static int LastCompleteID
+    {
+        get => PlayerPrefs.GetInt(lastCompleteId, -1);
+        set => PlayerPrefs.SetInt(lastCompleteId, value);
     }
 
     public static void ResetProgress()

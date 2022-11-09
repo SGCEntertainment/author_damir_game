@@ -1111,7 +1111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165077077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1671,6 +1671,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chapterCanvas:
+  - {fileID: 3217948393349074063, guid: 93a970371b450fb4d83361a6df9920c9, type: 3}
+  - {fileID: 6546377732998695953, guid: 139aeef18953723438e1803e40b71493, type: 3}
+  - {fileID: 5067114762256862622, guid: f3cdd1e2af369594c8f7adc90d2baf86, type: 3}
+  - {fileID: 506231955008878195, guid: c101585e6d2663c4e9660fe8001ea767, type: 3}
   - {fileID: 8011089358235160755, guid: 326bab5f7a189b54cafaa0713013e6d9, type: 3}
 --- !u!1 &1996217197
 GameObject:

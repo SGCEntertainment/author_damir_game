@@ -12,7 +12,8 @@ public class MenuCanvas : MonoBehaviour
     {
         switch(i)
         {
-            case 0: break;
+            case 0: UIManager.Instance.StartWitnContinue(true); break;
+
             case 1:
                 UIManager.Instance.ShowCanvas(CanvasName.newgame);
                 break;
